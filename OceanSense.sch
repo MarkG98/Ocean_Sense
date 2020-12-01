@@ -1,0 +1,666 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Ocean Sense"
+Date "2020-10-15"
+Rev "Rev 1.0"
+Comp "Mark Goldwater & Co."
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L OceanSenseLib:SparkFun_MicroSD U5
+U 1 1 5F8924A4
+P 9700 1750
+F 0 "U5" H 9050 2350 50  0000 L CNN
+F 1 "SparkFun_MicroSD" H 9400 1200 50  0000 L CNN
+F 2 "OceanSense:uSD Breakout" H 9800 2000 50  0001 C CNN
+F 3 "" H 9800 2000 50  0001 C CNN
+F 4 "microSD Transflash Breakout" H 9700 1750 50  0001 C CNN "Component Name"
+F 5 "SparkFun" H 9700 1750 50  0001 C CNN "Vendor"
+	1    9700 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L OceanSenseLib:SparkFun_MMA8452Q U3
+U 1 1 5F892D9A
+P 6500 1850
+F 0 "U3" H 6500 2315 50  0000 C CNN
+F 1 "SparkFun_MMA8452Q" H 6500 2200 50  0000 C CNN
+F 2 "OceanSense:MMA8452Q" H 6550 1400 50  0001 C CNN
+F 3 "" H 6550 1400 50  0001 C CNN
+F 4 "MMA8452Q" H 6500 1850 50  0001 C CNN "Component Name"
+F 5 "SparkFun" H 6500 1850 50  0001 C CNN "Vendor"
+	1    6500 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L OceanSenseLib:SparkFun_Si7021 U6
+U 1 1 5F8937C6
+P 8200 4850
+F 0 "U6" H 7850 5400 50  0000 L CNN
+F 1 "SparkFun_Si7021" V 8200 4550 50  0000 L CNN
+F 2 "OceanSense:Si7021" H 7250 4650 50  0001 C CNN
+F 3 "" H 7250 4650 50  0001 C CNN
+F 4 "Si7021" H 8200 4850 50  0001 C CNN "Component Name"
+F 5 "SparkFun" H 8200 4850 50  0001 C CNN "Vendor"
+	1    8200 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L OceanSenseLib:SparkFun_TPS63070 U2
+U 1 1 5F8942C9
+P 3450 1800
+F 0 "U2" H 2900 2250 50  0000 C CNN
+F 1 "SparkFun_TPS63070" H 3450 1800 50  0000 C CNN
+F 2 "OceanSense:TPS63070" H 3450 1800 50  0001 C CNN
+F 3 "" H 3450 1800 50  0001 C CNN
+F 4 "TPS63070" H 3450 1800 50  0001 C CNN "Component Name"
+F 5 "SparkFun" H 3450 1800 50  0001 C CNN "Vendor"
+	1    3450 1800
+	1    0    0    -1  
+$EndComp
+Text GLabel 1700 4800 0    50   Input ~ 0
+I2C_SDA
+Text GLabel 1700 4900 0    50   Input ~ 0
+I2C_SCL
+Text GLabel 5550 4750 0    50   Input ~ 0
+I2C_SCL
+Text GLabel 5550 4850 0    50   Input ~ 0
+I2C_SDA
+$Comp
+L OceanSenseLib:Adafruit_DS3231 U4
+U 1 1 5F891B4E
+P 6000 4900
+F 0 "U4" H 5700 5400 50  0000 L CNN
+F 1 "Adafruit_DS3231" V 6000 4600 50  0000 L CNN
+F 2 "OceanSense:DS3231" H 6200 4900 50  0001 C CNN
+F 3 "" H 6200 4900 50  0001 C CNN
+F 4 "DS3231" H 6000 4900 50  0001 C CNN "Component Name"
+F 5 "Adafruit" H 6000 4900 50  0001 C CNN "Vendor"
+	1    6000 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 4650 5000 4650
+Wire Wire Line
+	5000 4650 5000 4800
+$Comp
+L power:GND #PWR011
+U 1 1 5F89B8A0
+P 5000 4800
+F 0 "#PWR011" H 5000 4550 50  0001 C CNN
+F 1 "GND" H 5005 4627 50  0000 C CNN
+F 2 "" H 5000 4800 50  0001 C CNN
+F 3 "" H 5000 4800 50  0001 C CNN
+	1    5000 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 4550 5350 4550
+Wire Wire Line
+	5350 4550 5350 4400
+$Comp
+L power:+3.3V #PWR014
+U 1 1 5F89C5BF
+P 5350 4400
+F 0 "#PWR014" H 5350 4250 50  0001 C CNN
+F 1 "+3.3V" H 5365 4573 50  0000 C CNN
+F 2 "" H 5350 4400 50  0001 C CNN
+F 3 "" H 5350 4400 50  0001 C CNN
+	1    5350 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 4950 7100 4950
+Wire Wire Line
+	7050 4950 7050 4800
+Wire Wire Line
+	7700 5100 7500 5100
+Text GLabel 7700 4800 0    50   Input ~ 0
+I2C_SDA
+Text GLabel 7700 4650 0    50   Input ~ 0
+I2C_SCL
+Wire Wire Line
+	5950 1650 5750 1650
+Wire Wire Line
+	5750 1650 5750 1500
+Text GLabel 5950 1950 0    50   Input ~ 0
+I2C_SCL
+Text GLabel 5950 1800 0    50   Input ~ 0
+I2C_SDA
+$Comp
+L power:GND #PWR013
+U 1 1 5F89F8EC
+P 5750 2250
+F 0 "#PWR013" H 5750 2000 50  0001 C CNN
+F 1 "GND" H 5755 2077 50  0000 C CNN
+F 2 "" H 5750 2250 50  0001 C CNN
+F 3 "" H 5750 2250 50  0001 C CNN
+	1    5750 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 2250 5750 2100
+Wire Wire Line
+	5750 2100 5950 2100
+Text GLabel 9000 1800 0    50   Input ~ 0
+SPI_SCK
+Text GLabel 9000 2100 0    50   Input ~ 0
+SPI_CS
+Text GLabel 9000 2000 0    50   Input ~ 0
+SPI_MOSI
+Text GLabel 9000 1600 0    50   Input ~ 0
+SPI_MISO
+Text GLabel 3450 5100 2    50   Input ~ 0
+SPI_MISO
+Text GLabel 3450 5200 2    50   Input ~ 0
+SPI_MOSI
+Text GLabel 3450 5000 2    50   Input ~ 0
+SPI_SCK
+$Comp
+L power:GND #PWR010
+U 1 1 5F8ACCD9
+P 4500 2250
+F 0 "#PWR010" H 4500 2000 50  0001 C CNN
+F 1 "GND" H 4505 2077 50  0000 C CNN
+F 2 "" H 4500 2250 50  0001 C CNN
+F 3 "" H 4500 2250 50  0001 C CNN
+	1    4500 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 1900 4500 1900
+Wire Wire Line
+	9000 1700 8050 1700
+$Comp
+L power:+3.3V #PWR015
+U 1 1 5F8A1054
+P 7950 1350
+F 0 "#PWR015" H 7950 1200 50  0001 C CNN
+F 1 "+3.3V" H 7965 1523 50  0000 C CNN
+F 2 "" H 7950 1350 50  0001 C CNN
+F 3 "" H 7950 1350 50  0001 C CNN
+	1    7950 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 1900 8400 1900
+$Comp
+L power:GND #PWR016
+U 1 1 5F8A1D9E
+P 8400 2300
+F 0 "#PWR016" H 8400 2050 50  0001 C CNN
+F 1 "GND" H 8405 2127 50  0000 C CNN
+F 2 "" H 8400 2300 50  0001 C CNN
+F 3 "" H 8400 2300 50  0001 C CNN
+	1    8400 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5F8A2970
+P 2250 5700
+F 0 "#PWR05" H 2250 5450 50  0001 C CNN
+F 1 "GND" H 2255 5527 50  0000 C CNN
+F 2 "" H 2250 5700 50  0001 C CNN
+F 3 "" H 2250 5700 50  0001 C CNN
+	1    2250 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 5F8A30CC
+P 2550 5700
+F 0 "#PWR06" H 2550 5450 50  0001 C CNN
+F 1 "GND" H 2555 5527 50  0000 C CNN
+F 2 "" H 2550 5700 50  0001 C CNN
+F 3 "" H 2550 5700 50  0001 C CNN
+	1    2550 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 5F8A3788
+P 2850 5700
+F 0 "#PWR07" H 2850 5450 50  0001 C CNN
+F 1 "GND" H 2855 5527 50  0000 C CNN
+F 2 "" H 2850 5700 50  0001 C CNN
+F 3 "" H 2850 5700 50  0001 C CNN
+	1    2850 5700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 2050 4300 2050
+Wire Wire Line
+	4300 2050 4300 2250
+$Comp
+L power:GND #PWR09
+U 1 1 5F8A4B15
+P 4300 2250
+F 0 "#PWR09" H 4300 2000 50  0001 C CNN
+F 1 "GND" H 4305 2077 50  0000 C CNN
+F 2 "" H 4300 2250 50  0001 C CNN
+F 3 "" H 4300 2250 50  0001 C CNN
+	1    4300 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 1800 2550 1800
+Wire Wire Line
+	2550 1800 2550 1950
+$Comp
+L power:GND #PWR03
+U 1 1 5F8A5F53
+P 2550 1950
+F 0 "#PWR03" H 2550 1700 50  0001 C CNN
+F 1 "GND" H 2555 1777 50  0000 C CNN
+F 2 "" H 2550 1950 50  0001 C CNN
+F 3 "" H 2550 1950 50  0001 C CNN
+	1    2550 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5F8AC391
+P 2350 1950
+F 0 "#PWR02" H 2350 1700 50  0001 C CNN
+F 1 "GND" H 2355 1777 50  0000 C CNN
+F 2 "" H 2350 1950 50  0001 C CNN
+F 3 "" H 2350 1950 50  0001 C CNN
+	1    2350 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR04
+U 1 1 5F8AD08B
+P 2850 4200
+F 0 "#PWR04" H 2850 4050 50  0001 C CNN
+F 1 "+3.3V" H 2865 4373 50  0000 C CNN
+F 2 "" H 2850 4200 50  0001 C CNN
+F 3 "" H 2850 4200 50  0001 C CNN
+	1    2850 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 1600 2350 1600
+Wire Wire Line
+	2350 1600 2350 1950
+Wire Wire Line
+	4500 1900 4500 2250
+Wire Wire Line
+	4200 1700 4550 1700
+Wire Wire Line
+	4550 1700 4550 1550
+$Comp
+L power:GND #PWR0102
+U 1 1 5F921A3F
+P 3800 3200
+F 0 "#PWR0102" H 3800 2950 50  0001 C CNN
+F 1 "GND" H 3805 3027 50  0000 C CNN
+F 2 "" H 3800 3200 50  0001 C CNN
+F 3 "" H 3800 3200 50  0001 C CNN
+	1    3800 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5F92229A
+P 4000 3200
+F 0 "#PWR0103" H 4000 2950 50  0001 C CNN
+F 1 "GND" H 4005 3027 50  0000 C CNN
+F 2 "" H 4000 3200 50  0001 C CNN
+F 3 "" H 4000 3200 50  0001 C CNN
+	1    4000 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 1550 4550 1550
+$Comp
+L Device:CP1 C1
+U 1 1 5F9249B5
+P 900 1900
+F 0 "C1" H 1015 1946 50  0000 L CNN
+F 1 "10uF" H 1015 1855 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 900 1900 50  0001 C CNN
+F 3 "~" H 900 1900 50  0001 C CNN
+F 4 "399-3548-ND" H 900 1900 50  0001 C CNN "Component Name"
+F 5 "DigiKey" H 900 1900 50  0001 C CNN "Vendor"
+	1    900  1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5F92BDB6
+P 1350 1900
+F 0 "C2" H 1465 1946 50  0000 L CNN
+F 1 "0.1uF" H 1465 1855 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 1388 1750 50  0001 C CNN
+F 3 "~" H 1350 1900 50  0001 C CNN
+F 4 "BC1084CT-ND" H 1350 1900 50  0001 C CNN "Component Name"
+F 5 "DigiKey" H 1350 1900 50  0001 C CNN "Vendor"
+	1    1350 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5F92D83F
+P 900 2050
+F 0 "#PWR0104" H 900 1800 50  0001 C CNN
+F 1 "GND" H 905 1877 50  0000 C CNN
+F 2 "" H 900 2050 50  0001 C CNN
+F 3 "" H 900 2050 50  0001 C CNN
+	1    900  2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5F92DC56
+P 1350 2050
+F 0 "#PWR0105" H 1350 1800 50  0001 C CNN
+F 1 "GND" H 1355 1877 50  0000 C CNN
+F 2 "" H 1350 2050 50  0001 C CNN
+F 3 "" H 1350 2050 50  0001 C CNN
+	1    1350 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	900  1500 1350 1500
+Wire Wire Line
+	900  1750 900  1500
+Wire Wire Line
+	1350 1750 1350 1500
+Connection ~ 1350 1500
+$Comp
+L Device:C C3
+U 1 1 5F93CA11
+P 8050 1850
+F 0 "C3" H 8165 1896 50  0000 L CNN
+F 1 "0.1uF" H 8165 1805 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 8088 1700 50  0001 C CNN
+F 3 "~" H 8050 1850 50  0001 C CNN
+F 4 "BC1084CT-ND" H 8050 1850 50  0001 C CNN "Component Name"
+F 5 "DigiKey" H 8050 1850 50  0001 C CNN "Vendor"
+	1    8050 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 1350 7950 1700
+Connection ~ 8050 1700
+Wire Wire Line
+	8050 1700 7950 1700
+Wire Wire Line
+	8400 1900 8400 2150
+Wire Wire Line
+	8050 2000 8050 2150
+Wire Wire Line
+	8050 2150 8400 2150
+Connection ~ 8400 2150
+Wire Wire Line
+	8400 2150 8400 2300
+$Comp
+L Device:C C4
+U 1 1 5F94354F
+P 7100 5100
+F 0 "C4" H 7215 5146 50  0000 L CNN
+F 1 "0.1uF" H 7215 5055 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 7138 4950 50  0001 C CNN
+F 3 "~" H 7100 5100 50  0001 C CNN
+F 4 "BC1084CT-ND" H 7100 5100 50  0001 C CNN "Component Name"
+F 5 "DigiKey" H 7100 5100 50  0001 C CNN "Vendor"
+	1    7100 5100
+	1    0    0    -1  
+$EndComp
+Connection ~ 7100 4950
+Wire Wire Line
+	7100 4950 7050 4950
+Wire Wire Line
+	7500 5100 7500 5250
+Wire Wire Line
+	7100 5250 7500 5250
+Connection ~ 7500 5250
+Wire Wire Line
+	7500 5250 7500 5450
+Text GLabel 3450 5300 2    50   Input ~ 0
+SPI_CS
+Text Notes 850  7200 0    71   ~ 0
+* Power Consumption Statistics\n   - SD Card --> init: 1900 uA, sleep: 100 uA, write: 9 mA\n   - MMA8452Q --> 6 nA - 165 uA\n   - Si7021 --> 6 uA - 165 uA\n   - ATmega32U4 --> 5.5 mA\n   - TPS63070 --> 50 uA\n   - DS3231 --> 200 uA
+$Comp
+L OceanSenseLib:18650_Sockets J1
+U 1 1 5F8A97A2
+P 2800 2950
+F 0 "J1" V 3250 3550 50  0000 C CNN
+F 1 "18650_Sockets" H 2850 2600 50  0000 C CNN
+F 2 "OceanSense:36-1049-ND" H 2800 2950 50  0001 C CNN
+F 3 "" H 2800 2950 50  0001 C CNN
+F 4 "36-1049-ND" H 2800 2950 50  0001 C CNN "Component Name"
+F 5 "DigiKey" H 2800 2950 50  0001 C CNN "Vendor"
+	1    2800 2950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1350 1500 1900 1500
+Wire Wire Line
+	2050 2750 1900 2750
+Connection ~ 1900 1500
+Wire Wire Line
+	1900 1500 2000 1500
+Wire Wire Line
+	2050 3050 1900 3050
+Wire Wire Line
+	1900 3050 1900 2750
+Connection ~ 1900 2750
+Wire Wire Line
+	3600 2750 4000 2750
+Wire Wire Line
+	4000 2750 4000 3200
+Wire Wire Line
+	3600 3050 3800 3050
+Wire Wire Line
+	3800 3050 3800 3200
+$Comp
+L OceanSenseLib:Pro_Mirco U1
+U 1 1 5F8902C8
+P 2550 4950
+F 0 "U1" H 1850 5650 50  0000 C CNN
+F 1 "Pro_Mirco" H 2550 4950 50  0000 C CNN
+F 2 "OceanSense:Pro Micro" H 2550 4900 50  0001 C CNN
+F 3 "" H 2550 4900 50  0001 C CNN
+F 4 "Pro Micro" H 2550 4950 50  0001 C CNN "Component Name"
+F 5 "SparkFun" H 2550 4950 50  0001 C CNN "Vendor"
+	1    2550 4950
+	1    0    0    -1  
+$EndComp
+Text Notes 9650 1900 0    47   ~ 0
+Samsung 32GB \n(20 MB/s Write Speed) \nMicroSDXC EVO Select\n
+Text Notes 800  7500 0    71   ~ 0
+* Worst Case Battery Life Estimation: 2 X 2600 mAh in parallel --> ~~14 days
+Text Notes 700  6300 0    157  ~ 0
+* Notes
+Text Label 1900 2700 1    50   ~ 0
++Bat
+$Comp
+L Device:LED D1
+U 1 1 5FA2FD0F
+P 1200 5000
+F 0 "D1" H 1193 5216 50  0000 C CNN
+F 1 "LED" H 1193 5125 50  0000 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 1200 5000 50  0001 C CNN
+F 3 "~" H 1200 5000 50  0001 C CNN
+F 4 "1516-QBL7IW60D-WW-ND" H 1200 5000 50  0001 C CNN "Component Name"
+F 5 "DigiKey" H 1200 5000 50  0001 C CNN "Vendor"
+	1    1200 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 5000 1700 5000
+Wire Wire Line
+	1050 5000 950  5000
+Wire Wire Line
+	950  5000 950  5150
+$Comp
+L Device:R_US R1
+U 1 1 5FA33151
+P 950 5300
+F 0 "R1" H 1018 5346 50  0000 L CNN
+F 1 "4.7k" H 1018 5255 50  0000 L CNN
+F 2 "OceanSense:Resistor" V 990 5290 50  0001 C CNN
+F 3 "~" H 950 5300 50  0001 C CNN
+F 4 "CF18JT4K70CT-ND" H 950 5300 50  0001 C CNN "Component Name"
+F 5 "DigiKey" H 950 5300 50  0001 C CNN "Vendor"
+	1    950  5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 5FA339AC
+P 950 5450
+F 0 "#PWR01" H 950 5200 50  0001 C CNN
+F 1 "GND" H 955 5277 50  0000 C CNN
+F 2 "" H 950 5450 50  0001 C CNN
+F 3 "" H 950 5450 50  0001 C CNN
+	1    950  5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x04 J2
+U 1 1 5FA44D59
+P 9800 4900
+F 0 "J2" H 9880 4892 50  0000 L CNN
+F 1 "Conn_01x04" H 9880 4801 50  0000 L CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical" H 9800 4900 50  0001 C CNN
+F 3 "~" H 9800 4900 50  0001 C CNN
+F 4 "WM4202-ND" H 9800 4900 50  0001 C CNN "Component Name"
+F 5 "DigiKey" H 9800 4900 50  0001 C CNN "Vendor"
+	1    9800 4900
+	-1   0    0    1   
+$EndComp
+Text GLabel 10000 4900 2    50   Input ~ 0
+I2C_SDA
+Text GLabel 10000 4800 2    50   Input ~ 0
+I2C_SCL
+$Comp
+L power:GND #PWR0106
+U 1 1 5FA490DF
+P 10200 5150
+F 0 "#PWR0106" H 10200 4900 50  0001 C CNN
+F 1 "GND" H 10205 4977 50  0000 C CNN
+F 2 "" H 10200 5150 50  0001 C CNN
+F 3 "" H 10200 5150 50  0001 C CNN
+	1    10200 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0107
+U 1 1 5FA4A7B8
+P 10200 4550
+F 0 "#PWR0107" H 10200 4400 50  0001 C CNN
+F 1 "+3.3V" H 10215 4723 50  0000 C CNN
+F 2 "" H 10200 4550 50  0001 C CNN
+F 3 "" H 10200 4550 50  0001 C CNN
+	1    10200 4550
+	1    0    0    -1  
+$EndComp
+Text Notes 9600 5600 0    50   ~ 0
+connect additional I2C sensor
+$Comp
+L Device:C C5
+U 1 1 5FA5282E
+P 10600 4950
+F 0 "C5" H 10715 4996 50  0000 L CNN
+F 1 "0.1uF" H 10715 4905 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 10638 4800 50  0001 C CNN
+F 3 "~" H 10600 4950 50  0001 C CNN
+F 4 "BC1084CT-ND" H 10600 4950 50  0001 C CNN "Component Name"
+F 5 "DigiKey" H 10600 4950 50  0001 C CNN "Vendor"
+	1    10600 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10000 5000 10200 5000
+Wire Wire Line
+	10200 5000 10200 5100
+Wire Wire Line
+	10000 4700 10200 4700
+Wire Wire Line
+	10200 4700 10200 4650
+Wire Wire Line
+	10200 4650 10600 4650
+Wire Wire Line
+	10600 4650 10600 4800
+Connection ~ 10200 4650
+Wire Wire Line
+	10200 4650 10200 4550
+Wire Wire Line
+	10600 5100 10200 5100
+Connection ~ 10200 5100
+Wire Wire Line
+	10200 5100 10200 5150
+$Comp
+L power:+3.3V #PWR0108
+U 1 1 5FA7605A
+P 7050 4800
+F 0 "#PWR0108" H 7050 4650 50  0001 C CNN
+F 1 "+3.3V" H 7065 4973 50  0000 C CNN
+F 2 "" H 7050 4800 50  0001 C CNN
+F 3 "" H 7050 4800 50  0001 C CNN
+	1    7050 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0109
+U 1 1 5FA76E99
+P 5750 1500
+F 0 "#PWR0109" H 5750 1350 50  0001 C CNN
+F 1 "+3.3V" H 5765 1673 50  0000 C CNN
+F 2 "" H 5750 1500 50  0001 C CNN
+F 3 "" H 5750 1500 50  0001 C CNN
+	1    5750 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0110
+U 1 1 5FA79265
+P 7500 5450
+F 0 "#PWR0110" H 7500 5200 50  0001 C CNN
+F 1 "GND" H 7505 5277 50  0000 C CNN
+F 2 "" H 7500 5450 50  0001 C CNN
+F 3 "" H 7500 5450 50  0001 C CNN
+	1    7500 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 1550 4550 1500
+Connection ~ 4550 1550
+$Comp
+L power:+3.3V #PWR0101
+U 1 1 5FB58072
+P 4550 1500
+F 0 "#PWR0101" H 4550 1350 50  0001 C CNN
+F 1 "+3.3V" H 4565 1673 50  0000 C CNN
+F 2 "" H 4550 1500 50  0001 C CNN
+F 3 "" H 4550 1500 50  0001 C CNN
+	1    4550 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Jumper JP1
+U 1 1 5FBAD879
+P 2300 1500
+F 0 "JP1" H 2350 1650 50  0000 R CNN
+F 1 "Jumper" H 2400 1750 50  0000 R CNN
+F 2 "OceanSense:Jumper" H 2300 1500 50  0001 C CNN
+F 3 "~" H 2300 1500 50  0001 C CNN
+	1    2300 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 1500 2700 1500
+Wire Wire Line
+	1900 1500 1900 2750
+$EndSCHEMATC

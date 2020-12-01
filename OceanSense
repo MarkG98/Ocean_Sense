@@ -1,0 +1,8 @@
+Reference, Value, Footprint, Datasheet, Component Name, Vendor
+"U1","Pro_Mirco","","","Pro Micro","SparkFun"
+"U5","SparkFun_MicroSD","","","microSD Transflash Breakout","SparkFun"
+"U3","SparkFun_MMA8452Q","","","MMA8452Q","SparkFun"
+"U6","SparkFun_Si7021","","","Si7021","SparkFun"
+"U2","SparkFun_TPS63070","","","TPS63070","SparkFun"
+"U4","Adafruit_DS3231","","","DS3231","Adafruit"
+"J1","18650_Sockets","","","36-1049-ND","DigiKey"
