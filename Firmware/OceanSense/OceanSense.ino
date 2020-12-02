@@ -112,7 +112,18 @@ void setup() {
    //
    if (SD.exists("config.txt")) {
      processConfgurationFile();
-   }   
+   }
+
+   //
+   // set up CSV columns
+   //
+   if (!SD.exists("logth.csv")) {
+    setUpTempHumidCsvColumns();
+   }
+   delay(1000);
+   if (!SD.exists("loga.csv")) {
+    setUpAccelCsvColumns();
+   }
 }
 
 void loop() {
@@ -273,7 +284,7 @@ void writeTemperatureAndHumidityToSD() {
   //
   // open temperature and humidity log file
   //
-  logFile = SD.open("logfileth.txt", FILE_WRITE);
+  logFile = SD.open("logth.csv", FILE_WRITE);
 
   //
   // if log file opened properly unload buffers
@@ -281,10 +292,9 @@ void writeTemperatureAndHumidityToSD() {
   if (logFile) {
     for (int i = 0; i < TEMP_HUMID_BUFFER; i++) {
       logFile.print(timeStamps[i]);
-      logFile.print(" -- ");
-      logFile.print("Temperature: ");
+      logFile.print(", ");
       logFile.print(temperatures[i]);
-      logFile.print(" Humidity: ");
+      logFile.print(", ");
       logFile.println(humidities[i]);
     }
 
@@ -306,7 +316,7 @@ void logAndWriteAccelerometerToSD() {
   //
   // open temperature and humidity log file
   //
-  logFile = SD.open("logfilea.txt", FILE_WRITE);
+  logFile = SD.open("loga.csv", FILE_WRITE);
 
   //
   // if log file opened properly take data
@@ -315,12 +325,11 @@ void logAndWriteAccelerometerToSD() {
     if (accel.available()) {
       getTimeStamp();
       logFile.print(timeStamp);
-      logFile.print(" -- ");
-      logFile.print("X: ");
+      logFile.print(", ");
       logFile.print(accel.getCalculatedX(), 3);
-      logFile.print(" Y: ");
+      logFile.print(", ");
       logFile.print(accel.getCalculatedY(), 3);
-      logFile.print(" Z: ");
+      logFile.print(", ");
       logFile.print(accel.getCalculatedZ(), 3);
       logFile.println();
     }
@@ -474,4 +483,58 @@ void processConfgurationFile() {
   Serial.println("Applied Config!");
   #endif
  }
+}
+
+void setUpAccelCsvColumns() {
+  
+  //
+  // open acceleration log file
+  //
+  logFile = SD.open("loga.csv", FILE_WRITE);
+
+  //
+  // if log file opened properly write columns
+  //
+  if (logFile) {
+    logFile.print("TimeStamp, ");
+    logFile.print("X, ");
+    logFile.print("Y, ");
+    logFile.print("Z, ");
+    logFile.println();
+    
+    //
+    // close file
+    //
+    logFile.close();
+  } else {
+    #ifdef DEBUG
+    Serial.println("Error opening accel log file");
+    #endif
+  }
+}
+
+void setUpTempHumidCsvColumns() {
+  //
+  // open acceleration log file
+  //
+  logFile = SD.open("logth.csv", FILE_WRITE);
+
+  //
+  // if log file opened write columns
+  //
+  if (logFile) {
+    logFile.print("TimeStamp, ");
+    logFile.print("Temp, ");
+    logFile.print("Humidity, ");
+    logFile.println();
+    
+    //
+    // close file
+    //
+    logFile.close();
+  } else {
+    #ifdef DEBUG
+    Serial.println("Error opening th log file");
+    #endif
+  }
 }
