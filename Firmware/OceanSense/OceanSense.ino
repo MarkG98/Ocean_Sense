@@ -15,7 +15,7 @@
 #include <SD.h>
 #include <string.h>
 
-#define DEBUG // define for serial port debugging
+// #define DEBUG // define for serial port debugging
 
 #define TEMP_HUMID_BUFFER 12 // number of temperature and humidity samples to store before writing to SD card
 #define MINUTES_TO_MILLISECONDS 60000 // multiplication factor to convert minutes to milliseconds
